@@ -45,7 +45,7 @@ pipeline {
         stage ('Cleaing up'){
             steps{
                     echo "-------------------CLEANING UP-------------------"
-                    sh "docker rmi $registry:$BUILD_NUMBER"
+                    sh "docker rmi $dockerhubRegitry:$BUILD_NUMBER"
             }
         }
     }
