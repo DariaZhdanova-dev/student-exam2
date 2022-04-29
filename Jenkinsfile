@@ -35,17 +35,17 @@ pipeline {
 
         stage('Deploy Image') {
             steps {
-                try{
                 script {
+                    try {
                     echo "-------------------DEPLOY-------------------"
                     docker.withRegistry( '', registryCredential ) {
                         dockerImage.push()
                     }
-                }
-                } finally
+                    } finally
                 {
                     echo "-------------------CLEANING UP-------------------"
                     sh "docker rmi $registry:$BUILD_NUMBER"
+                }
                 }
             }
         }
