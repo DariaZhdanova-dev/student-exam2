@@ -4,3 +4,5 @@ venv/
 coverage.xml
 report.xml
 .vscode/
+*/__pycache__/
+js_example.egg-info
