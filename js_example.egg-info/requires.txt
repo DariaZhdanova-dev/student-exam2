@@ -1,6 +1,0 @@
-flask
-
-[test]
-blinker
-coverage
-pytest
