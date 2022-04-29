@@ -3,7 +3,11 @@ pipeline {
         dockerhubRegitry = "dariazhdanovadev/cicd-exam-images"
         dockerhubCreds = 'dockerhub'
     }
-    agent any
+    agent { label 'alpine'}
+    options {
+        timestamps()
+    }
+    
     stages {
         stage('Get Code') {
             steps {
