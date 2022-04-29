@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     echo "-------------------DEPLOY-------------------"
-                    docker.withRegistry( '', registryCredential ) {
+                    docker.withRegistry( '', dockerhubCreds ) {
                         dockerImage.push("$BUILD_NUMBER")}
                 }
             }
