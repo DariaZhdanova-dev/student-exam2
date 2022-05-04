@@ -44,12 +44,12 @@ pipeline {
                         dockerImage.push("$BUILD_NUMBER")}
                 }
             }
-        }
-    }
-     post {
+            post {
             always{
                     echo "-------------------CLEANING UP-------------------"
                     sh "docker rmi $dockerhubRegitry:$BUILD_NUMBER"
             }
         }
+    }
+    }
 }
