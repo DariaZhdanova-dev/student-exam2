@@ -28,8 +28,6 @@ pipeline {
                 '''
             }
         }
-    }
-
         
         stage('Build Docker image') {
             steps {
@@ -54,4 +52,5 @@ pipeline {
             }
         }
     }
+}
 }
