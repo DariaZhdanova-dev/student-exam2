@@ -28,14 +28,14 @@ pipeline {
             }
         }
         
-        // stage('Build Docker image') {
-        //     steps {
-        //         script {
-        //             echo '-------------------BUILD-------------------'
-        //             dockerImage = docker.build dockerhubRegitry + ":$BUILD_NUMBER"
-        //         }
-        //     }
-        // }
+        stage('Build Docker image') {
+            steps {
+                script {
+                    echo '-------------------BUILD-------------------'
+                    dockerImage = docker.build dockerhubRegitry + ":$BUILD_NUMBER"
+                }
+            }
+        }
         stage('Deploy Image') {
             steps {
                 script {
