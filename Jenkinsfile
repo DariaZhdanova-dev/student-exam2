@@ -45,11 +45,11 @@ pipeline {
                 }
             }
         }
-        post {
+    }
+     post {
             always{
                     echo "-------------------CLEANING UP-------------------"
                     sh "docker rmi $dockerhubRegitry:$BUILD_NUMBER"
             }
         }
-    }
 }
