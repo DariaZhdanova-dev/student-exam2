@@ -24,6 +24,7 @@ pipeline {
                     pip install -e '.[test]'
                     coverage run -m pytest
                     coverage report
+                    coverage xml
                 '''
             }
         }
@@ -52,6 +53,5 @@ pipeline {
                     sh "docker rmi $dockerhubRegitry:$BUILD_NUMBER"
             }
         }
-    }
     }
 }
