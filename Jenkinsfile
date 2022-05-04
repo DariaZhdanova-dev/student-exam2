@@ -27,6 +27,25 @@ pipeline {
                 '''
             }
         }
+
+        stage('Publish reports') {
+        cobertura(
+            onlyStable: false,
+            enableNewApi: true,
+            failUnhealthy: false,
+            failUnstable: false,
+            autoUpdateHealth: false,
+            autoUpdateStability: false,
+            zoomCoverageChart: false,
+            maxNumberOfBuilds: 0,
+            sourceEncoding: 'ASCII',
+            coberturaReportFile: 'report/coverage.xml',
+            lineCoverageTargets: '80, 0, 0',
+            methodCoverageTargets: '80, 0, 0',
+            conditionalCoverageTargets: '70, 0, 0'
+        )
+    }
+
         
         stage('Build Docker image') {
             steps {
