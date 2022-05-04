@@ -28,7 +28,7 @@ pipeline {
             }
         }
 
-        stage('Publish reports') {
+        stage('Publish reports') {steps{
         cobertura(
             onlyStable: false,
             enableNewApi: true,
@@ -44,6 +44,7 @@ pipeline {
             methodCoverageTargets: '80, 0, 0',
             conditionalCoverageTargets: '70, 0, 0'
         )
+        }
     }
 
         
